@@ -17,13 +17,24 @@ client.on('message', msg => {
   if (msg.content === 'hello') {
     msg.channel.sendMessage('Hello to you too!')
   }
-  // If message is weather, return temperature
+  // If message is temperature/paris, return temperature
   if (msg.content === 'temperature/paris') {
     httpClient.getPromise('http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=b05787eda8d8f7967925692ea52134d2')
     .then((res) => {
       var tempK = res.data.main.temp
       var tempC = tempK - 273.15
       msg.channel.sendMessage('Température à Paris: ' + tempC.toFixed(2) + ' °C')
+    })
+  }
+  // If message is weather/temperature/forecast, return tempature for 5 days
+  if (msg.content === 'weather/temperature/forecast') {
+    httpClient.getPromise('http://api.openweathermap.org/data/2.5/forecast?q=Paris,fr&APPID=b05787eda8d8f7967925692ea52134d2')
+    .then((res) => {
+      var forecastTemp = []
+      for (var i = 0; i < 5; i++) {
+        forecastTemp[i] = ((res.data.list[i].main.temp) - 273.15).toFixed(2)
+      }
+      msg.channel.sendMessage('Température j+1: ' + forecastTemp[0] + ' , Température j+2: ' + forecastTemp[1] + ' , Température j+3: ' + forecastTemp[2] + ' , Température j+4: ' + forecastTemp[3] + ' , Température j+5: ' + forecastTemp[4])
     })
   }
 })
