@@ -44,7 +44,7 @@ client.on('message', msg => {
   //------------------------------------------------------//
   
   // If message is "translate", post "write your word in english"
-  var msg = message;
+  var message = msg;
   var n = msg.startsWith("!translate");
   if (n === true ) {
 	// Imports the Google Cloud client library
