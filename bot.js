@@ -39,7 +39,7 @@ client.on('message', msg => {
       msg.channel.sendMessage('Température j+1: ' + forecastTemp[0] + ' , Température j+2: ' + forecastTemp[1] + ' , Température j+3: ' + forecastTemp[2] + ' , Température j+4: ' + forecastTemp[3] + ' , Température j+5: ' + forecastTemp[4])
     })
   }
-  
+
 //------------Google_Translate------------//
   Translate.parse(msg)
   
