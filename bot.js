@@ -3,7 +3,8 @@ const config = require('./config.js')
 const client = new Discord.Client()
 var httpClient = require('node-rest-client-promise').Client()
 
-//
+// npm install -g nodemon
+// nodemon bot.js
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.username}!`)
 })
