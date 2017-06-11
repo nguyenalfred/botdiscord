@@ -19,18 +19,6 @@
       message.channel.send('Veuillez entrer une langue valide.')
     } else {
       const translate = Trans
-      var retour = message.content.substring(0)
-      translate.detect(retour)
-      .then((results) => {
-        let detections = results[0]
-        detections = Array.isArray(detections) ? detections : [detections]
-        detections.forEach((detection) => {
-          message.channel.send('Langue de départ : ' + detection.language)
-        })
-      })
-      .catch((err) => {
-        console.log('ERROR', err)
-      })
       // traduction dans la langue choisie
       var languedemandee = message.content.charAt(0) + message.content.charAt(1)
       var atraduire = message.content.substring(3)
