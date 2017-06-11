@@ -22,7 +22,7 @@
       // traduction dans la langue choisie
       var languedemandee = message.content.charAt(0) + message.content.charAt(1)
       var atraduire = message.content.substring(3)
-      translateClient.translate(atraduire, languedemandee).then((results) => {
+      translate.translate(atraduire, languedemandee).then((results) => {
         let translations = results[0]
         translations = Array.isArray(translations) ? translations : [translations]
         translations.forEach((translation) => {
