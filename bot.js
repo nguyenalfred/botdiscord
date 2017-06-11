@@ -15,7 +15,7 @@ client.on('message', msg => {
   if (msg.channel.type !== 'dm' && (config.channel !== msg.channel.id || msg.author.id === client.user.id)) return
 
   // If message is hello, post hello too
-  if (msg.startsWith("hello")) {
+  if (msg.content === 'hello') {
     msg.channel.sendMessage('Hello to you too!')
   }
   // If message is temperature/paris, return temperature
