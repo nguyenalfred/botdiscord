@@ -37,13 +37,20 @@ client.on('message', msg => {
       msg.channel.sendMessage('Température j+1: ' + forecastTemp[0] + ' , Température j+2: ' + forecastTemp[1] + ' , Température j+3: ' + forecastTemp[2] + ' , Température j+4: ' + forecastTemp[3] + ' , Température j+5: ' + forecastTemp[4])
     })
   }
+  
+  
+  //------------------------------------------------------//
+  //-------------Google Translate-------------------------//
+  //------------------------------------------------------//
+  
   // If message is "translate", post "write your word in english"
-  if (msg.content === 'translate') {
-    msg.channel.sendMessage('Please write the english word')
+  var msg = message;
+  var n = msg.startsWith("!translate");
+  if (n === true ) {
 	// Imports the Google Cloud client library
 	const Translate = require('@google-cloud/translate');
 		key: 'AIzaSyD5KUAKvMH9TFh-YnFWJ8nVjgkR6yXmklM'
-
+		
 	// Instantiates a client
 	const translate = Translate();
 
@@ -51,7 +58,7 @@ client.on('message', msg => {
 	var text = message.content.substring(3);
 
 	// The target language, e.g. "ru"
-	var target = message.content.charAt(0) + message.content.charAr(1);
+	var target = message.content.charAr(1);
 
 	// The model to use, "nmt" or "base"
 	const model = 'base';
