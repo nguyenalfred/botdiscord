@@ -18,7 +18,7 @@
     if (message.content.charAt(2) !== ' ' || message.content.charAt(1) === ' ') {
       message.channel.send('Veuillez entrer une langue valide.')
     } else {
-      const translate = Trad
+      const translate = Trans
       var retour = message.content.substring(0)
       translate.detect(retour)
       .then((results) => {
