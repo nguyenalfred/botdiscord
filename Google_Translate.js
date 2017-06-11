@@ -26,7 +26,7 @@
         let translations = results[0]
         translations = Array.isArray(translations) ? translations : [translations]
         translations.forEach((translation) => {
-          message.channel.send('La traduction : ' + translation)
+          message.channel.send(translation)
         })
       })
     .catch((err) => {
