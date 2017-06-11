@@ -48,7 +48,7 @@ client.on('message', msg => {
 	const translate = Translate();
 
 	// The text to translate, e.g. "Hello, world!"
-	// const text = 'Hello, world!';
+	var text = message.content.substring(3);
 
 	// The target language, e.g. "ru"
 	var target = message.content.charAt(0) + message.content.charAr(1);
