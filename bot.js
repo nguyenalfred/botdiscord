@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const config = require('./config.js')
 const client = new Discord.Client()
 var httpClient = require('node-rest-client-promise').Client()
+const Translate = require('./Google_Translate')
 
 // npm install -g nodemon
 // nodemon bot.js
@@ -38,6 +39,10 @@ client.on('message', msg => {
       msg.channel.sendMessage('Température j+1: ' + forecastTemp[0] + ' , Température j+2: ' + forecastTemp[1] + ' , Température j+3: ' + forecastTemp[2] + ' , Température j+4: ' + forecastTemp[3] + ' , Température j+5: ' + forecastTemp[4])
     })
   }
+  
+//------------Google_Translate------------//
+  Translate.parse(msg)
+  
 })
 
-client.login(config.token)
+	client.login(config.token)
