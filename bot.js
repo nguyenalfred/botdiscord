@@ -1,8 +1,9 @@
+
 const Discord = require('discord.js')
 const config = require('./config.js')
-const SpotifyAll = require('./commands/spotify/all.js')
 const client = new Discord.Client()
 var httpClient = require('node-rest-client-promise').Client()
+const Translate = require('./Google_Translate')
 
 // npm install -g nodemon
 // nodemon bot.js
@@ -19,8 +20,8 @@ client.on('message', msg => {
   if (msg.content === 'hello') {
     msg.channel.sendMessage('Hello to you too!')
   }
-  // If message is !weather Paris, return temperature
-  if (msg.content === '!weather Paris') {
+  // If message is temperature/paris, return temperature
+  if (msg.content === 'temperature/paris') {
     httpClient.getPromise('http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=b05787eda8d8f7967925692ea52134d2')
     .then((res) => {
       var tempK = res.data.main.temp
@@ -28,8 +29,8 @@ client.on('message', msg => {
       msg.channel.sendMessage('Température à Paris: ' + tempC.toFixed(2) + ' °C')
     })
   }
-  // If message is !forecast Paris, return tempature for 5 days
-  if (msg.content === '!forecast Paris') {
+  // If message is weather/temperature/forecast, return tempature for 5 days
+  if (msg.content === 'weather/temperature/forecast') {
     httpClient.getPromise('http://api.openweathermap.org/data/2.5/forecast?q=Paris,fr&APPID=b05787eda8d8f7967925692ea52134d2')
     .then((res) => {
       var forecastTemp = []
@@ -39,7 +40,9 @@ client.on('message', msg => {
       msg.channel.sendMessage('Température j+1: ' + forecastTemp[0] + ' , Température j+2: ' + forecastTemp[1] + ' , Température j+3: ' + forecastTemp[2] + ' , Température j+4: ' + forecastTemp[3] + ' , Température j+5: ' + forecastTemp[4])
     })
   }
-  SpotifyAll.parse(msg)
+
+// ------------Google_Translate------------//
+  Translate.parse(msg)
 })
 
 client.login(config.token)
