@@ -1,9 +1,9 @@
 	-- READ ME --
 
-NGUYEN Alfred
-IBOURK Hicham
-ZHAO Yue
-GRAND Lucas
+NGUYEN Alfred / 
+IBOURK Hicham /
+ZHAO Yue / 
+GRAND Lucas / 
 
 
 	-- INSTRUCTIONS --
