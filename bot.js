@@ -4,7 +4,8 @@ const config = require('./config.js')
 const client = new Discord.Client()
 var httpClient = require('node-rest-client-promise').Client()
 const Translate = require('./Google_Translate')
-const SpotifyAll = require('./spotify.js')
+const Spotify = require('./spotify.js')
+const GoogleTraduction = require('./googleTranslate.js')
 
 // npm install -g nodemon
 // nodemon bot.js
@@ -44,7 +45,8 @@ client.on('message', msg => {
 
 // ------------Google_Translate------------//
   Translate.parse(msg)
-  SpotifyAll.parse(msg)
+  Spotify.parse(msg)
+  GoogleTraduction.parse(msg)
 })
 
 client.login(config.token)
