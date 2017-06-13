@@ -33,8 +33,8 @@ client.on('message', msg => {
       msg.channel.sendMessage('Température à Paris: ' + tempC.toFixed(2) + ' °C')
     })
   }
-  // If message is weather/temperature/forecast, return tempature for 5 days
-  if (msg.content === 'weather/temperature/forecast') {
+  // If message is !forecastParis, return tempature for 5 days
+  if (msg.content === '!forecastParis') {
     httpClient.getPromise('http://api.openweathermap.org/data/2.5/forecast?q=Paris,fr&APPID=b05787eda8d8f7967925692ea52134d2')
     .then((res) => {
       var forecastTemp = []
