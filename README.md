@@ -8,6 +8,8 @@ GRAND Lucas /
 
 	-- INSTRUCTIONS --
 
+	DEPLOIEMENT SUR AZURE : http://lualhi.azurewebsites.net
+	
 Entrer les commandes suivantes dans le dossier contenant des codes sources.
 npm install 
 npm start
