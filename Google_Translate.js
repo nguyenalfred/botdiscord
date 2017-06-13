@@ -32,6 +32,5 @@ module.exports = class Google_Translate extends Command {
         .catch((err) => {
           message.channel.send('ERROR', err)
         })
-    }
   }
 }
