@@ -11,5 +11,11 @@ module.exports = {
   },
   youtube: {
     KEY: 'AIzaSyA2HOeK8fbmyYJ2J32EbqZB0I_3EDK6Qr4'
+  },
+  twitter: {
+    consumerKey: 'VKhHgTVnG22kN5YlIuN9D8jvC',
+    consumerSecret: 'rRYGogg3yKzZjxARqa2CgMvdX4h8wjwRB74arT39PIBNND61Dw',
+    accessTokenKey: '874631102354391040-dpJXXbeR7b8KrDj1HH8mK0Lnpz58u1n',
+    accessTokenSecret: 'qe1LNY4bZWPnFhtG7JA6q4kKteURkBSvxMGeGBV1NMKdI'
   }
 }

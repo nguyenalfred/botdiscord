@@ -7,6 +7,7 @@ const Translate = require('./Google_Translate')
 const Spotify = require('./spotify.js')
 const GoogleTraduction = require('./googleTranslate.js')
 const youtube = require('./youtube.js')
+const twitter = require('./twitter')
 
 // npm install -g nodemon
 // nodemon bot.js
@@ -23,8 +24,8 @@ client.on('message', msg => {
   if (msg.content === 'hello') {
     msg.channel.sendMessage('Hello to you too!')
   }
-  // If message is temperature/paris, return temperature
-  if (msg.content === 'temperature/paris') {
+  // If message is !forecastParis, return temperature
+  if (msg.content === '!forecastParis') {
     httpClient.getPromise('http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=b05787eda8d8f7967925692ea52134d2')
     .then((res) => {
       var tempK = res.data.main.temp
@@ -44,11 +45,11 @@ client.on('message', msg => {
     })
   }
 
-// ------------Google_Translate------------//
   Translate.parse(msg)
   Spotify.parse(msg)
   GoogleTraduction.parse(msg)
   youtube.parse(msg)
+  twitter.parse(msg)
 })
 
 client.login(config.token)
