@@ -8,5 +8,8 @@ module.exports = {
   },
   googleTranslate: {
     KEY: 'AIzaSyCO0UTJvR2C3n6IiCioCiPJWJAuOEak18c'
+  },
+  youtube: {
+    KEY: 'AIzaSyA2HOeK8fbmyYJ2J32EbqZB0I_3EDK6Qr4'
   }
 }

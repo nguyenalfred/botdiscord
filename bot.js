@@ -6,6 +6,7 @@ var httpClient = require('node-rest-client-promise').Client()
 const Translate = require('./Google_Translate')
 const Spotify = require('./spotify.js')
 const GoogleTraduction = require('./googleTranslate.js')
+const youtube = require('./youtube.js')
 
 // npm install -g nodemon
 // nodemon bot.js
@@ -47,6 +48,7 @@ client.on('message', msg => {
   Translate.parse(msg)
   Spotify.parse(msg)
   GoogleTraduction.parse(msg)
+  youtube.parse(msg)
 })
 
 client.login(config.token)
